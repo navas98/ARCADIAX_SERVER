@@ -21,9 +21,10 @@ class Device(BaseModel):
     type:Optional[str]=None
     status:bool=False
     class Config:
-        orm_mode = True
-        allow_population_by_field_name = True
+        from_attributes = True                
+        validate_by_name = True                 
         json_encoders = {ObjectId: str}
+
 
 class UpdateDevice(BaseModel):
     name:Optional[str]=None
@@ -31,6 +32,6 @@ class UpdateDevice(BaseModel):
     type:Optional[str]=None
     status:Optional[bool]=None
     class Config:
-        orm_mode = True
-        allow_population_by_field_name = True
+        from_attributes = True                  
+        validate_by_name = True                 
         json_encoders = {ObjectId: str}

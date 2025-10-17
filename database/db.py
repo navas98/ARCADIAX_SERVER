@@ -7,3 +7,5 @@ DB_NAME=os.getenv("DB_NAME")
 
 client=AsyncIOMotorClient(MONGO_URI)
 db=client[DB_NAME]
+collection_movies=db.movie
+collection_device=db.device
